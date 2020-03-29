@@ -42,6 +42,7 @@ namespace StudentManagement
             {
                 btnDelete.Visible = true;
                 txtStudentID.Enabled = false;
+                txtStudentName.ForeColor = Color.Black;
             }
 
 
@@ -180,6 +181,24 @@ namespace StudentManagement
 
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            SinhVienDAO svDAO = new SinhVienDAO();
+            String StudentIDtemp = txtStudentID.Text.Trim();
+            int StudentID = Int16.Parse(StudentIDtemp);
+            int rsDelete = svDAO.DeleteStudents(StudentID);
+            if (rsDelete > 0)
+            {
+                MessageBox.Show("Deleted Successfully!!!");
+            }
+            else
+            {
+                MessageBox.Show("Deleted Faild!!!");
+            }
+
+            this.Close();
+        }
+
         private void LoadCBX()
         {
             SqlConnection connection = new SqlConnection(ConnectionString.DB_CONNECTION_STRING);
@@ -212,28 +231,13 @@ namespace StudentManagement
 
         public void setStudentYear(int year)
         {
-            cboYear.SelectedValue = year;
+            cboYear.SelectedIndex = year - 1;
         }
         public void setStudentMajor(string majorId)
         {
-            cboYear.SelectedValue = majorId;
+            cboMajor.SelectedItem = majorId;
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            SinhVienDAO svDAO = new SinhVienDAO();
-            String StudentIDtemp = txtStudentID.Text.Trim();
-            int StudentID = Int16.Parse(StudentIDtemp);
-            int rsDelete = svDAO.DeleteStudents(StudentID);
-            if(rsDelete > 0)
-            {
-                MessageBox.Show("Deleted Successfully!!!");
-            } else
-            {
-                MessageBox.Show("Deleted Faild!!!");
-            }
-
-            this.Close();
-        }
+        
     }
 }

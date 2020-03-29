@@ -69,6 +69,7 @@ namespace StudentManagement
         {
             options = 2;
             FormAdd formAdd = new FormAdd(options);
+
             formAdd.setStudentName( this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
             formAdd.setStudentId( this.dataGridView1.CurrentRow.Cells[1].Value.ToString());
             formAdd.setStudentYear((int) this.dataGridView1.CurrentRow.Cells[2].Value);
