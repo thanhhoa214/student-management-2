@@ -157,6 +157,8 @@ namespace StudentManagement
                 if (rsInsert > 0)
                 {
                     MessageBox.Show("Insert Successfully!!!");
+                    this.Close();
+
                 }
                 else if (rsInsert == -1)
                 {
@@ -172,12 +174,15 @@ namespace StudentManagement
                 if (rsUpdate > 0)
                 {
                     MessageBox.Show("Edit Successfully!!!");
+                    this.Close();
+
                 }
                 else
                 {
                     MessageBox.Show("Edit Faild!!!");
                 }
             }
+
 
         }
 
@@ -238,6 +243,6 @@ namespace StudentManagement
             cboMajor.SelectedItem = majorId;
         }
 
-        
+
     }
 }
