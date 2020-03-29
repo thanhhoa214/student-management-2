@@ -99,6 +99,7 @@ namespace StudentManagement
             SqlCommand cmd = new SqlCommand();
 
             connection.Open();
+
             cmd.CommandText = "insert SVIEN values('chhong', 123, 4, 'abc')";
             cmd.ExecuteNonQuery();
             cmd.Clone();
