@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace StudentManagement
 {
-    
+
     public partial class FormAdd : Form
     {
         private int options;
@@ -38,12 +38,18 @@ namespace StudentManagement
             cboYear.DisplayMember = "Value";
             cboYear.SelectedIndex = 0;
 
+            if (options == 2)
+            {
+                btnDelete.Visible = true;
+                txtStudentID.Enabled = false;
+            }
+
 
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void txtStudentID_Enter(object sender, EventArgs e)
@@ -91,6 +97,7 @@ namespace StudentManagement
             }
         }
 
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             SinhVienDAO svDAO = new SinhVienDAO();
@@ -102,17 +109,18 @@ namespace StudentManagement
             {
                 MessageBox.Show("ID can not empty!");
                 return;
-            } else 
+            }
+            else
             {
                 try
                 {
-                   StudentID = Int16.Parse(StudentIDtemp);
-                   if(StudentID < 0)
+                    StudentID = Int16.Parse(StudentIDtemp);
+                    if (StudentID < 0)
                     {
                         throw new Exception();
-                    } 
+                    }
                 }
-                catch(Exception)
+                catch (Exception)
                 {
                     MessageBox.Show("Only integer number!!");
                     return;
@@ -145,17 +153,20 @@ namespace StudentManagement
             if (options == 1)
             {
                 int rsInsert = svDAO.InsertStudents(StudentName, StudentID, Year + 1, Major);
-                if(rsInsert > 0)
+                if (rsInsert > 0)
                 {
                     MessageBox.Show("Insert Successfully!!!");
-                } else if(rsInsert == -1)
+                }
+                else if (rsInsert == -1)
                 {
                     MessageBox.Show("The ID is already exist");
-                } 
-              
+                }
 
-            } else if(options == 2)
+
+            }
+            else if (options == 2)
             {
+
                 int rsUpdate = svDAO.UpDateStudents(StudentName, StudentID, Year + 1, Major);
                 if (rsUpdate > 0)
                 {
@@ -166,7 +177,7 @@ namespace StudentManagement
                     MessageBox.Show("Edit Faild!!!");
                 }
             }
-           
+
         }
 
         private void LoadCBX()
@@ -206,6 +217,23 @@ namespace StudentManagement
         public void setStudentMajor(string majorId)
         {
             cboYear.SelectedValue = majorId;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            SinhVienDAO svDAO = new SinhVienDAO();
+            String StudentIDtemp = txtStudentID.Text.Trim();
+            int StudentID = Int16.Parse(StudentIDtemp);
+            int rsDelete = svDAO.DeleteStudents(StudentID);
+            if(rsDelete > 0)
+            {
+                MessageBox.Show("Deleted Successfully!!!");
+            } else
+            {
+                MessageBox.Show("Deleted Faild!!!");
+            }
+
+            this.Close();
         }
     }
 }
