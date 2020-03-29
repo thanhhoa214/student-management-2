@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SinhVienDAO.cs" />
     <Compile Include="ConnectionString.cs" />
     <Compile Include="FormAdd.cs">
       <SubType>Form</SubType>
@@ -67,6 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSVienDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SinhVienDTO.cs" />
     <EmbeddedResource Include="FormAdd.resx">
       <DependentUpon>FormAdd.cs</DependentUpon>
     </EmbeddedResource>

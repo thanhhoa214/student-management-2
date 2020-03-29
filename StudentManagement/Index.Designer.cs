@@ -78,7 +78,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(604, 415);
+            this.dataGridView1.Size = new System.Drawing.Size(445, 415);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -99,14 +99,14 @@
             this.panel1.Controls.Add(this.btnAddNewStu);
             this.panel1.Location = new System.Drawing.Point(13, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(604, 59);
+            this.panel1.Size = new System.Drawing.Size(445, 59);
             this.panel1.TabIndex = 4;
             // 
             // btnAddNewStu
             // 
             this.btnAddNewStu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAddNewStu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddNewStu.Location = new System.Drawing.Point(458, 12);
+            this.btnAddNewStu.Location = new System.Drawing.Point(314, 3);
             this.btnAddNewStu.Name = "btnAddNewStu";
             this.btnAddNewStu.Size = new System.Drawing.Size(131, 35);
             this.btnAddNewStu.TabIndex = 0;
@@ -118,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 554);
+            this.ClientSize = new System.Drawing.Size(466, 554);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -126,6 +126,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Index";
             this.Text = "Student Management";
+            this.Activated += new System.EventHandler(this.Index_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qLSVienDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sVIENBindingSource)).EndInit();
