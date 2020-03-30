@@ -9,9 +9,9 @@ namespace StudentManagement
     class ConnectionString
     {
         // DB Hoa Nguyen: 
-        public static readonly string DB_CONNECTION_STRING = "Data Source=DESKTOP-32553GU\\SQLEXPRESS;Initial Catalog=QLSVien;User ID=sa;Password=123456";
+        // public static readonly string DB_CONNECTION_STRING = "Data Source=DESKTOP-32553GU\\SQLEXPRESS;Initial Catalog=QLSVien;User ID=sa;Password=123456";
         // DB Chuong Nguyen: 
-        //public static readonly string DB_CONNECTION_STRING = "Data Source=se130198;Initial Catalog=QLSVien;Integrated Security=True";
+        public static readonly string DB_CONNECTION_STRING = "Data Source=se130198;Initial Catalog=QLSVien;Integrated Security=True";
         
     }
 }
