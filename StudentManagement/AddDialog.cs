@@ -12,17 +12,22 @@ using System.Windows.Forms;
 namespace StudentManagement
 {
 
-    public partial class FormAdd : Form
+    public partial class AddDialog : Form
     {
         private int options;
 
 
-        public FormAdd(int options)
+        public AddDialog(int options)
         {
             this.options = options;
 
             InitializeComponent();
-            LoadCBX();
+            MajorsDAO majorsDAO = new MajorsDAO();
+            var majors = majorsDAO.GetAll();
+            foreach (var major in majors)
+            {
+                cboMajor.Items.Add(major.Id);
+            }
             cboMajor.SelectedIndex = 0;
 
 
@@ -153,7 +158,7 @@ namespace StudentManagement
 
             if (options == 1)
             {
-                int rsInsert = svDAO.InsertStudents(StudentName, StudentID, Year + 1, Major);
+                int rsInsert = svDAO.InsertStudent(StudentName, StudentID, Year + 1, Major);
                 if (rsInsert > 0)
                 {
                     MessageBox.Show("Insert Successfully!!!");
@@ -203,28 +208,6 @@ namespace StudentManagement
 
             this.Close();
         }
-
-        private void LoadCBX()
-        {
-            SqlConnection connection = new SqlConnection(ConnectionString.DB_CONNECTION_STRING);
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader dr;
-
-            connection.Open();
-            cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT MAKHOA FROM KHOA";
-            dr = cmd.ExecuteReader();
-            if (dr.HasRows)
-            {
-                while (dr.Read())
-                {
-                    cboMajor.Items.Add(dr[0].ToString());
-                }
-            }
-            connection.Close();
-        }
-
-
         public void setStudentId(string id)
         {
             txtStudentID.Text = id;

@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,13 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SinhVienDAO.cs" />
+    <Compile Include="majors\MajorsDAO.cs" />
+    <Compile Include="majors\MajorsDTO.cs" />
+    <Compile Include="students\SinhVienDAO.cs" />
     <Compile Include="ConnectionString.cs" />
-    <Compile Include="FormAdd.cs">
+    <Compile Include="AddDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAdd.Designer.cs">
-      <DependentUpon>FormAdd.cs</DependentUpon>
+    <Compile Include="AddDialog.Designer.cs">
+      <DependentUpon>AddDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Index.cs">
       <SubType>Form</SubType>
@@ -68,9 +71,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSVienDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SinhVienDTO.cs" />
-    <EmbeddedResource Include="FormAdd.resx">
-      <DependentUpon>FormAdd.cs</DependentUpon>
+    <Compile Include="students\SinhVienDTO.cs" />
+    <Compile Include="ViewChartDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewChartDialog.Designer.cs">
+      <DependentUpon>ViewChartDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddDialog.resx">
+      <DependentUpon>AddDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.cs</DependentUpon>
@@ -84,6 +93,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewChartDialog.resx">
+      <DependentUpon>ViewChartDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
