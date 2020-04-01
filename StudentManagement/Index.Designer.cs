@@ -47,9 +47,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(454, 11);
+            this.button1.Location = new System.Drawing.Point(605, 14);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(8, 23);
+            this.button1.Size = new System.Drawing.Size(11, 28);
             this.button1.TabIndex = 1;
             this.button1.Text = "Load from DB";
             this.button1.UseVisualStyleBackColor = true;
@@ -57,13 +58,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 101);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 124);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(531, 337);
+            this.dataGridView1.Size = new System.Drawing.Size(708, 415);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -71,10 +74,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 5);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(339, 29);
+            this.label1.Size = new System.Drawing.Size(419, 36);
             this.label1.TabIndex = 3;
             this.label1.Text = "C# .NET Student Management";
             // 
@@ -83,10 +85,10 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Controls.Add(this.btnViewChart);
             this.panel1.Controls.Add(this.btnAddNewStu);
-            this.panel1.Location = new System.Drawing.Point(10, 49);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(13, 60);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(531, 48);
+            this.panel1.Size = new System.Drawing.Size(708, 59);
             this.panel1.TabIndex = 4;
             // 
             // btnViewChart
@@ -94,9 +96,10 @@
             this.btnViewChart.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnViewChart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnViewChart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnViewChart.Location = new System.Drawing.Point(226, 3);
+            this.btnViewChart.Location = new System.Drawing.Point(301, 4);
+            this.btnViewChart.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewChart.Name = "btnViewChart";
-            this.btnViewChart.Size = new System.Drawing.Size(128, 44);
+            this.btnViewChart.Size = new System.Drawing.Size(171, 54);
             this.btnViewChart.TabIndex = 1;
             this.btnViewChart.Text = "View Chart";
             this.btnViewChart.UseVisualStyleBackColor = false;
@@ -108,10 +111,10 @@
             this.btnAddNewStu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAddNewStu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAddNewStu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddNewStu.Location = new System.Drawing.Point(359, 2);
-            this.btnAddNewStu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddNewStu.Location = new System.Drawing.Point(479, 2);
+            this.btnAddNewStu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddNewStu.Name = "btnAddNewStu";
-            this.btnAddNewStu.Size = new System.Drawing.Size(170, 46);
+            this.btnAddNewStu.Size = new System.Drawing.Size(227, 57);
             this.btnAddNewStu.TabIndex = 0;
             this.btnAddNewStu.Text = "Add new student";
             this.btnAddNewStu.UseVisualStyleBackColor = false;
@@ -133,13 +136,14 @@
             // 
             // Index
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 450);
+            this.ClientSize = new System.Drawing.Size(737, 554);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Index";
             this.Text = "Student Management";
             this.Activated += new System.EventHandler(this.Index_Activated);

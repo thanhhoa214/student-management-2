@@ -45,5 +45,7 @@ namespace StudentManagement
             ViewChartDialog viewChartDialog = new ViewChartDialog();
             viewChartDialog.ShowDialog();
         }
+
+      
     }
 }

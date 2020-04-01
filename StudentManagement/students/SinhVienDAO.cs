@@ -145,7 +145,6 @@ namespace StudentManagement
                 sqlDataAdapter.Fill(data);
 
                 studentTable = data.Tables[0];
-
             }
             return studentTable;
         }

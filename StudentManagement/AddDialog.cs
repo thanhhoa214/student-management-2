@@ -120,7 +120,7 @@ namespace StudentManagement
             {
                 try
                 {
-                    StudentID = Int16.Parse(StudentIDtemp);
+                    StudentID = Int32.Parse(StudentIDtemp);
                     if (StudentID < 0)
                     {
                         throw new Exception();
@@ -128,16 +128,20 @@ namespace StudentManagement
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Only integer number!!");
+                    MessageBox.Show("Only positive integers have 10 digits!!");
                     return;
                 }
             }
 
 
             String StudentName = txtStudentName.Text;
-            if (StudentName.Equals("Enter Name"))
+            if (StudentName.Equals("Enter Name") || String.IsNullOrWhiteSpace(StudentName))
             {
                 MessageBox.Show("Name can not empty!");
+                return;
+            } else if(StudentName.Length > 30)
+            {
+                MessageBox.Show("The maximum length is 30");
                 return;
             }
 
@@ -193,13 +197,13 @@ namespace StudentManagement
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure want to delete?", "DELETE", MessageBoxButtons.YesNo);
-
+            DialogResult dialogResult = MessageBox.Show("Are you sure want to delete?", "", MessageBoxButtons.YesNo);
+            
             if(dialogResult == DialogResult.Yes)
             {
                 SinhVienDAO svDAO = new SinhVienDAO();
                 String StudentIDtemp = txtStudentID.Text.Trim();
-                int StudentID = Int16.Parse(StudentIDtemp);
+                int StudentID = Int32.Parse(StudentIDtemp);
                 int rsDelete = svDAO.DeleteStudents(StudentID);
                 if (rsDelete > 0)
                 {
