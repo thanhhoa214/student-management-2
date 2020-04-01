@@ -26,7 +26,7 @@ namespace StudentManagement
             var majors = majorsDAO.GetAll();
             foreach (var major in majors)
             {
-                cboMajor.Items.Add(major.Name);
+                cboMajor.Items.Add(major.Id);
             }
             cboMajor.SelectedIndex = 0;
 

@@ -133,7 +133,8 @@ namespace StudentManagement
         public DataTable GetAll()
         {
             DataTable studentTable = new DataTable();
-            string query = "SELECT  MASV, TEN, NAM, TENKHOA FROM SVIEN INNER JOIN KHOA ON MAKHOA = MAKH";
+          //  string query = "SELECT  MASV, TEN, NAM, TENKHOA FROM SVIEN INNER JOIN KHOA ON MAKHOA = MAKH";
+            string query = "SELECT  MASV, TEN, NAM, MAKH FROM SVIEN";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString.DB_CONNECTION_STRING))
             {
