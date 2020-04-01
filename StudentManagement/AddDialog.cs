@@ -193,20 +193,25 @@ namespace StudentManagement
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            SinhVienDAO svDAO = new SinhVienDAO();
-            String StudentIDtemp = txtStudentID.Text.Trim();
-            int StudentID = Int16.Parse(StudentIDtemp);
-            int rsDelete = svDAO.DeleteStudents(StudentID);
-            if (rsDelete > 0)
-            {
-                MessageBox.Show("Deleted Successfully!!!");
-            }
-            else
-            {
-                MessageBox.Show("Deleted Faild!!!");
-            }
+            DialogResult dialogResult = MessageBox.Show("Are you sure want to delete?", "DELETE", MessageBoxButtons.YesNo);
 
-            this.Close();
+            if(dialogResult == DialogResult.Yes)
+            {
+                SinhVienDAO svDAO = new SinhVienDAO();
+                String StudentIDtemp = txtStudentID.Text.Trim();
+                int StudentID = Int16.Parse(StudentIDtemp);
+                int rsDelete = svDAO.DeleteStudents(StudentID);
+                if (rsDelete > 0)
+                {
+                    MessageBox.Show("Deleted Successfully!!!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Deleted Faild!!!");
+                }
+            }
+                                   
         }
         public void setStudentId(string id)
         {
